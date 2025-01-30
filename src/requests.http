@@ -1,0 +1,42 @@
+### Регистрация пользователя
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "name": "Тест Тестов",
+    "password": "password123"
+}
+
+### Вход в систему
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "password123"
+}
+
+### Получить все отели
+GET http://localhost:3000/api/hotels
+Content-Type: application/json
+
+### Получить конкретный отель
+GET http://localhost:3000/api/hotels/1
+Content-Type: application/json
+
+### Получить свободные номера отеля
+GET http://localhost:3000/api/hotels/1/rooms
+Content-Type: application/json
+
+### Создать бронирование (защищенный маршрут)
+POST http://localhost:3000/api/bookings
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTczMTU2NDA3NywiZXhwIjoxNzMxNjUwNDc3fQ.Lb-nWRTfsjGxIT6cfyBQnfZfgXhEd2jCTuRBI5ZVzZM
+
+{
+    "roomId": 1,
+    "checkIn": "2024-12-01",
+    "checkOut": "2024-12-05"
+}
+
